@@ -1,0 +1,33 @@
+.suchContainer {
+  padding: 20px; 
+  width: 100%;
+}
+
+.recipe-grid {
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px; 
+}
+
+.recipe-card {
+  background-color: #fff; 
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px; 
+  text-align: center;
+}
+
+.recipe-card img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 4px; 
+}
+.recepie-title{
+ justify-content: center;
+ 
+}
+.no-recepie{
+  font:2rem;
+  color:orange;
+}
