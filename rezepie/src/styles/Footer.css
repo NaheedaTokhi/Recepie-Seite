@@ -1,0 +1,38 @@
+.footer ,.footer2{
+    text-align: center;
+    padding: 20px 0; 
+    margin-top: 60px;
+    background-color: orange;
+    width:100vw;
+
+}
+
+.footer-content {
+    margin-bottom: 20px; 
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+}
+
+.footer .social-icons a {
+    color: black;
+    font-size: 24px; 
+    transition: transform 0.3s;
+
+}
+
+.footer .social-icons a:hover {
+    color: white;
+    transform: scale(1.05);
+}
+.newsletter{
+    margin-top: 30px;
+}
+
+.footer-bottom {
+    padding-top: 10px; 
+    margin-bottom: 30px;
+}

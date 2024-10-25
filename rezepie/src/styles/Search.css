@@ -1,7 +1,7 @@
 .input-container{
     display:flex;
     justify-content: center;
-    margin-top: 7%;
+    margin-top: 9%;
     gap:20px;
 }
 input{
@@ -17,3 +17,31 @@ button{
     color:orange;
     height:40px
 }
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+  }
+  
+  .filter-buttons button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(155, 89, 8);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+  }
+  
+  .filter-buttons button:hover {
+    background-color: rgb(182, 119, 41);
+  }
+  

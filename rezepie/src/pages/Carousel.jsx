@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Footer} from "../components/Footer"
 import '../styles/Carousel.css'; // Für Styling
 
 export const Carousel = () => {
@@ -50,6 +51,7 @@ export const Carousel = () => {
   const currentPhotos = photos.slice(currentIndex, currentIndex + 3);
 
   return (
+    <>
     <div className="carousel">
       <div className="carousel-container">
         {currentPhotos.map((photo, index) => (
@@ -57,5 +59,8 @@ export const Carousel = () => {
         ))}
       </div>
     </div>
+
+    <Footer/>
+    </>
   );
 };

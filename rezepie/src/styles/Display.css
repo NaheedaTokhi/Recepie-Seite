@@ -1,3 +1,10 @@
+/* Display.css */
+
+.container {
+  margin-right: 80px;
+  margin-left: 80px;
+}
+
 .suchContainer {
   padding: 20px; 
   width: 100%;
@@ -9,6 +16,20 @@
   gap: 20px; 
 }
 
+.description {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center; 
+  margin: 20px 0; 
+}
+
+.recipe-grid h2 {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  color: rgb(155, 89, 8); 
+  text-align: center; 
+}
+
 .recipe-card {
   background-color: #fff; 
   border: 1px solid #ddd; 
@@ -16,6 +37,12 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 10px; 
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); 
 }
 
 .recipe-card img {
@@ -23,11 +50,60 @@
   height: auto; 
   border-radius: 4px; 
 }
-.recepie-title{
- justify-content: center;
- 
+
+.recepie-title {
+  justify-content: center;
+  margin-bottom: 3%;
+  font-size: 2.7rem;
+  margin-top: 4%;
+  color: rgb(155, 89, 8);
+  text-align: center; 
 }
-.no-recepie{
-  font:2rem;
-  color:orange;
+
+.no-recepie {
+  color: orange;
+  font-size: 4rem;
+  width: 100vw;
+  text-align: center;
+  height: 42vh;
+}
+
+.recipe-details, .nutrient {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: antiquewhite;
+  width: 100%;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px; 
+  transition: background-color 0.3s;
+}
+
+.recipe-details:hover, .nutrient:hover {
+  cursor: pointer;
+  background-color: #d2b48c;
+}
+
+
+@media (max-width: 768px) {
+  .recipe-grid {
+      grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .container {
+      margin-right: 20px;
+      margin-left: 20px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .recipe-grid {
+      grid-template-columns: 1fr; 
+  }
+
+  .description {
+      font-size: 1.2rem; 
+  }
 }
