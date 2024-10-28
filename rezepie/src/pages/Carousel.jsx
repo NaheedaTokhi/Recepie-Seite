@@ -42,7 +42,7 @@ export const Carousel = () => {
        
         return (prevIndex + 3) % photos.length;
       });
-    }, 30000); 
+    }, 10000); 
 
     return () => clearInterval(interval); 
   }, [photos.length]);

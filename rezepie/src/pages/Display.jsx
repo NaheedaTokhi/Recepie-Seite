@@ -15,8 +15,20 @@ export const Display = () => {
   };
   const handleRecipeSearch = (recipe) => {
     setSelectedRecipe(recipe.recipe); 
-    navigate("/recipe-detail");
+    navigate("/recipe-detail");  
   }
+  const addToFavorites = (recipe) => {
+    const existingFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const isAlreadyFavorite = existingFavorites.some((fav) => fav.uri === recipe.uri);
+
+    if (!isAlreadyFavorite) {
+      existingFavorites.push(recipe);
+      localStorage.setItem("favorites", JSON.stringify(existingFavorites));
+      alert("Recipe added to favorites!");
+    } else {
+      alert("This recipe is already in your favorites.");
+    }
+  };
   return (
     <>
     <div className="container">
@@ -35,12 +47,14 @@ export const Display = () => {
               <div className="recipe-card">
                 <h2>{recipe.recipe.label}</h2>
                 <img src={recipe.recipe.image} alt={recipe.recipe.label} />
+         
                <div className="recipe-details"
                key={index}
                onClick={() => handleRecipeSearch(recipe)}>Recipe Details</div>
                <div className="nutrient"
                key={index}
                onClick={() => handleRecipeClick(recipe)}>Nutrients Details</div>
+              <button onClick={() => addToFavorites(recipe.recipe)}>Add to Favorites</button>
               </div>
             ))
           ) : (

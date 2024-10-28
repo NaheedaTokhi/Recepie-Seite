@@ -1,12 +1,13 @@
 import "../styles/Search.css";
 import { useContext, useState } from "react";
 import { SearchContext } from "../contexts/SearchContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 
 export const Search = ({ onSearch }) => {
   const { setSearchRecepie, query, setQuery } = useContext(SearchContext);
   const [inputValue, setInputValue] = useState(query);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const APP_ID = '712a3480';
   const APP_KEY = '05bed75edd068724d2a9de3432c14e8b';
@@ -31,16 +32,17 @@ export const Search = ({ onSearch }) => {
     navigate("display");
   };
 
-
-  const filterRecipes = (type) => {
-    const filteredRecipes = searchRecepie.filter(recipe =>
-      recipe.recipe.healthLabels.includes(type)
-    );
-    navigate("/filtered-recipes", { state: { filteredRecipes } });
-  };
-
   return (
-    <div className="input-container">
+      <div className="container">
+        {location.pathname === '/' && (
+        <div className="welcome-message">
+          <h1>Welcome to Recipe Master!</h1>
+          <p>
+            Discover, Save, and Enjoy Delicious Recipes! At Recipe Master, we believe that cooking should be a delightful and rewarding experience. Our application allows you to explore a vast array of recipes tailored to your taste and dietary needs.
+          </p>
+        </div>
+      )}
+      <div className="input-container">
       <input
         type="text"
         value={inputValue}
@@ -48,13 +50,7 @@ export const Search = ({ onSearch }) => {
         placeholder="Enter a recipe keyword"
       />
       <button onClick={handleClick}>Search</button>
-
-      <div className="filter-buttons">
-        <button onClick={() => filterRecipes("Vegan")}>Vegan</button>
-        <button onClick={() => filterRecipes("Vegetarian")}>Vegetarisch</button>
-        <button onClick={() => filterRecipes("Fish")}>Fisch</button>
-        <button onClick={() => filterRecipes("Meal")}>Mahlzeit</button>
       </div>
-    </div>
+      </div>
   );
 };

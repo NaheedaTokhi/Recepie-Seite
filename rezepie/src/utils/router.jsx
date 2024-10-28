@@ -5,12 +5,19 @@ import { Nutrients } from "../pages/Nutrients";
 import { Change } from "../components/Change";
 import { Error } from "../pages/Error";
 import { RecipeDetail } from "../pages/RecipeDetail";
-import { FilteredRecipes } from "../pages/FilteredRecipes";
+import { Favorites } from "../pages/Favorites"; 
+import { TipsAndTricks} from "../pages/TipsAndTricks"
+
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Change />,
+    element: (
+      <>
+
+        <Change />
+      </>
+    ),
     children:[
         {
             index:true,
@@ -29,8 +36,12 @@ export const router = createBrowserRouter([
             element: <RecipeDetail/>,
           },
           {
-            path: "/filtered-recipes",
-            element: <FilteredRecipes/>,
+            path: "favorites",
+            element: <Favorites />,
+          },
+          {
+            path: "tips",
+            element: <TipsAndTricks />,
           },
     ]
   },
