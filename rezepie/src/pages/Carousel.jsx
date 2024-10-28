@@ -20,7 +20,7 @@ export const Carousel = () => {
   };
 
 
-  //const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${getRandomSearchTerm()}&app_id=${APP_ID}&app_key=${APP_KEY}`;
+  const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${getRandomSearchTerm()}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
   useEffect(() => {
     const fetchRecipes = async () => {

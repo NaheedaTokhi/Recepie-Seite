@@ -33,6 +33,7 @@ export const Search = ({ onSearch }) => {
   };
 
   return (
+    <>
       <div className="container">
         {location.pathname === '/' && (
         <div className="welcome-message">
@@ -52,5 +53,6 @@ export const Search = ({ onSearch }) => {
       <button onClick={handleClick}>Search</button>
       </div>
       </div>
+      </>
   );
 };
